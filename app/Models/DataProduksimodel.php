@@ -9,5 +9,5 @@ class DataProduksimodel extends Model
 {
     use HasFactory;
     protected $table = 'data_produksi';
-protected $guarded = ['id'];
+    protected $guarded = ['id'];
 }

@@ -20,14 +20,14 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('auth.login');
 // });
-Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::get('/', [LoginController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/auth', [LoginController::class, 'authenticate'])->name('auth');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+// Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
-Route::group(['middleware'], function() {
-
+Route::group(['middleware'], function () {
+    dd('test');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::match(['get', 'post'], '/logout', [LoginController::class, 'logout'])->name('logout');
 
@@ -36,8 +36,7 @@ Route::group(['middleware'], function() {
 
     //DATA PRODUKSI
     Route::get('/DataProduksi', [DataProduksiController::class, 'index'])->name('dataproduksi.index');
-    Route::post('/DataProduksistore', [DataProduksiController::class, 'store'])->name('dataproduksi.store'); //ini untuk input data
-    
+    Route::post('/DataProduksistore', [DataProduksiController::class, 'store'])->name('dataproduksi'); //ini untuk input data
 });
 
 

@@ -61,7 +61,7 @@
                                     <th class="wd-25p border-bottom-0">Aksi</th>
                                 </tr>
                             </thead>
-                            {{-- <tbody>
+                            <tbody>
                                 @foreach ($dataproduksi as $dp)
                                     <tr>
                                         <th scope="row">{{ $loop->iteration }}</th>
@@ -73,7 +73,7 @@
                                         <td>aksi</td>
                                     </tr>
                                 @endforeach
-                            </tbody> --}}
+                            </tbody>
                         </table>
                         <!-- awal modal tambah -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -84,7 +84,7 @@
                                         <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data Produksi</h1>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="{{ route('dataproduksi.store') }}" method="post">
+                                        <form action="/DataProduksistore" method="post">
                                             @csrf
                                             <div class="form-group">
                                                 <input type="text" name="stok_bibit" class="form-control"
